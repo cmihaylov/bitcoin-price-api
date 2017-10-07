@@ -1,0 +1,17 @@
+{
+  "name": "bitcoin-price-api",
+  "version": "1.0.0",
+  "description": "Bitcoin price API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Cvetan Mihaylov",
+  "license": "ISC",
+  "dependencies": {
+    "cron": "^1.2.1",
+    "express": "^4.15.4",
+    "mongoose": "^4.11.11",
+    "request": "^2.81.0"
+  }
+}

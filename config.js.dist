@@ -1,0 +1,17 @@
+const config = {
+    serverPort: 3000,
+    dbParams: {
+        username: '',
+        password: '',
+        host: 'localhost',
+        port: '27017',
+        dbName: 'bitcoinPriceDB'
+    },
+    blockchainInfoApi: {
+        "baseUrl": 'https://api.blockchain.info',
+        "ticker": 'https://blockchain.info/ticker',
+        "priceCharts": 'https://api.blockchain.info/charts/market-price',
+    }
+};
+
+module.exports = config;

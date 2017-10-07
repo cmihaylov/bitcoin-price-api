@@ -1,0 +1,27 @@
+const tools = require('./../lib/tools');
+
+// Constructor
+var BitcoinValue = function (meta) {
+    this.id = null;
+    this.value = null;
+    this.currency = 'USD';
+    this.timestamp = null;
+
+    this.update(meta);
+}
+
+/**
+ * Update model attributes
+ *
+ * @param meta
+ */
+BitcoinValue.prototype.update = function (meta) {
+    for (var key in meta) {
+        if (meta.hasOwnProperty(key) && meta[key] !== undefined && this.hasOwnProperty(key)) {
+            this[key] = meta[key];
+        }
+    }
+}
+
+// exports
+module.exports = BitcoinValue;
