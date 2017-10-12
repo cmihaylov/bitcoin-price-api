@@ -1,5 +1,6 @@
 const config = require('./config');
 const express = require('express');
+const cors = require('cors');
 const importer = require('./middleware/importer');
 const mongoose = require('mongoose');
 const dbHelper = require('./lib/db');
@@ -14,6 +15,9 @@ const deleteOldDataCronJobs = require('./cronjobs/deleteOldData');
 
 // create Express server
 var server = express();
+
+// add CORS middleware
+server.use(cors());
 
 // connect to MongoDB
 var mongoDbUri = dbHelper.getMongoDbUri(config.dbParams);

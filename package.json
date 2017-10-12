@@ -9,6 +9,7 @@
   "author": "Cvetan Mihaylov",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.4",
     "cron": "^1.2.1",
     "express": "^4.15.4",
     "mongoose": "^4.11.11",
