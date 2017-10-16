@@ -127,7 +127,7 @@ router.get('/now', function (req, res, next) {
                                     var monthAgoObject = data[0] || null;
                                     responseData.changePercent.monthAgo = tools.getChangeInPercent(getValueOrNull(monthAgoObject), responseData.value);
 
-                                    res.json(responseData);
+                                    res.json([responseData]);
                                 }
                             );
                         }
