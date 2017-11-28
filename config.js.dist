@@ -1,5 +1,6 @@
 const config = {
     serverPort: 3000,
+    urlPrefix: '/v1',
     dbParams: {
         username: '',
         password: '',

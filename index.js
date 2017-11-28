@@ -31,10 +31,10 @@ mongoose.connect(mongoDbUri, mongoDbOptions);
 importer.checkDBcompleteness();
 
 // apply /bitcoin routes
-server.use('/bitcoin', bitcoinRouter);
+server.use(config.urlPrefix + '/bitcoin', bitcoinRouter);
 
 // apply default router to catch ANY other requested route
-server.use('/', defaultRouter);
+server.use(config.urlPrefix + '/', defaultRouter);
 
 // start the server
 server.listen(config.serverPort, function () {
