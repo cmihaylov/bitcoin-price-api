@@ -70,7 +70,7 @@ var updateHourlyAvgValue = function(error, data) {
 var job1 = new CronJob('00 00,15,30,45 * * * *', function() {
     blockchainApi.fetchCurrentPrice(function (body) {
         BitcoinValue.create({
-            value: body.USD.last,
+            value: parseFloat((body.USD.last).toFixed(2)),
             timestamp: tools.getCurrentTimestamp()
         }, updateHourlyAvgValue);
     });
