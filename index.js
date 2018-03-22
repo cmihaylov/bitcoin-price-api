@@ -4,6 +4,7 @@ const cors = require('cors');
 const importer = require('./middleware/importer');
 const mongoose = require('mongoose');
 const dbHelper = require('./lib/db');
+const tools = require('./lib/tools');
 
 // import routers
 const bitcoinRouter = require('./router/bitcoin');
@@ -29,6 +30,12 @@ mongoose.connect(mongoDbUri, mongoDbOptions);
 // Check if there is a need for data import/sync initiation
 // (initiated if number of months is more than the monthly averages in the DB)
 importer.checkDBcompleteness();
+
+// log time and ip address of request
+server.use(function(req, res, next) {
+    console.log(tools.getCurrentDatetimeString(), req.ip);
+    next();
+});
 
 // apply /bitcoin routes
 server.use(config.urlPrefix + '/bitcoin', bitcoinRouter);
